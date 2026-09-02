@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-button',
+  selector: 'button[applogOutButton]', // attribute based
+  //  selector: 'button.button', // for css class level
   standalone: true,
   imports: [],
   templateUrl: './button.component.html',
