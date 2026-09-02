@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'button[applogOutButton]', // attribute based
+  selector: 'button[appButton]', // attribute based
   //  selector: 'button.button', // for css class level
   standalone: true,
   imports: [],
