@@ -16,8 +16,7 @@ export class ControlComponent {
 
   label = input.required<string>();
 
-  constructor(private elementRef:ElementRef)
-  {
+  constructor(private elementRef: ElementRef) {
 
   }
 
