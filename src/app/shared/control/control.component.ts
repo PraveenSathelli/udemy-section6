@@ -1,4 +1,4 @@
-import { Component, ContentChild, ElementRef, HostListener, inject, input, ViewEncapsulation } from '@angular/core';
+import { afterNextRender, afterRender, Component, ContentChild, ElementRef, HostListener, inject, input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-control',
@@ -20,14 +20,20 @@ export class ControlComponent {
   control?: ElementRef<HTMLInputElement | HTMLTextAreaElement>;
 
   constructor(private elementRef: ElementRef) {
+    afterRender(() => {
+      console.log("log after render");
+    });
 
+    afterNextRender(() => {
+      console.log('after next render');
+    });
   }
 
   private el = inject(ElementRef);
 
   onClick() {
     console.log("data log");
-    console.log("data "  + this.control?.nativeElement.id + " " + this.control?.nativeElement.value)
+    console.log("data " + this.control?.nativeElement.id + " " + this.control?.nativeElement.value)
     console.log(this.el); // way 1 
     console.log(this.elementRef) // way 2
   }
