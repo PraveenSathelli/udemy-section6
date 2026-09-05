@@ -3,7 +3,7 @@
         @for(ticket of tickets; track ticket.id)
         {
             <li>
-                <app-ticket [data]="ticket"/> - {{$first}} - {{$last}} - {{$even}}
+                <app-ticket [data]="ticket" (close)="onCloseTicket(ticket.id)"/> - {{$first}} - {{$last}} - {{$even}}
             </li>
         } @empty {
             <p>no tickets</p>
